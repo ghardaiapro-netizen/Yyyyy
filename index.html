@@ -3,169 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghardaia Production | إنتاج غرداية للمنتوجات الفلاحية</title>
-    
+    <title>Ghardaia Production | إنتاج غرداية</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
-        }
-        
-        :root {
-            --primary-green: #2e7d32;
-            --dark-green: #1b5e20;
-            --light-green: #4caf50;
-            --accent-gold: #c5a059;
-            --dark-gold: #a88645;
-            --bg-light: #f9fafb;
-            --bg-gradient: linear-gradient(135deg, #f9fafb 0%, #e8f5e9 100%);
-            --card-gradient: linear-gradient(180deg, #ffffff 0%, #f8fdf8 100%);
-            --text-dark: #1a3c1e;
-            --text-light: #5a6c5d;
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
-            --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --border-radius-sm: 8px;
-            --border-radius-md: 16px;
-            --border-radius-lg: 24px;
-            --transition: all 0.3s ease;
-        }
-
-        body { 
-            font-family: 'Noto Sans Arabic', sans-serif; 
-            background: var(--bg-gradient); 
-            color: var(--text-dark); 
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-
-        header {
-            height: 70px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-            position: fixed;
-            top: 0; width: 100%;
-            z-index: 1000;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .brand { 
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'El Messiri', serif; 
-            font-size: 1.6rem; 
-            font-weight: 700;
-            background: linear-gradient(90deg, var(--primary-green) 0%, var(--accent-gold) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .feed { margin-top: 90px; padding: 20px 5%; max-width: 1300px; margin-left: auto; margin-right: auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
-        
-        .card { 
-            background: var(--card-gradient); 
-            border-radius: var(--border-radius-lg); 
-            overflow: hidden; 
-            box-shadow: var(--shadow-md);
-            border: 1px solid rgba(46, 125, 50, 0.08);
-        }
-
-        footer {
-            text-align: center; 
-            padding: 30px; 
-            background: #ffffff; 
-            border-top: 1px solid rgba(0,0,0,0.05); 
-            margin-top: 50px;
-        }
-
-        footer a {
-            text-decoration: none; 
-            color: var(--primary-green); 
-            margin: 0 15px; 
-            font-weight: bold;
-            transition: var(--transition);
-        }
-
-        footer a:hover { color: var(--accent-gold); }
-
-        #adminAddBtn { 
-            background: var(--primary-green); 
-            color: white; 
-            border: none; 
-            width: 40px; height: 40px; 
-            border-radius: 50%; 
-            cursor: pointer;
-            font-size: 20px;
-        }
+        :root { --primary-green: #2e7d32; --accent-gold: #c5a059; --text-dark: #1a3c1e; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Noto Sans Arabic', sans-serif; background: #f9fafb; color: var(--text-dark); }
+        header { height: 70px; background: white; display: flex; align-items: center; padding: 0 20px; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .brand { position: absolute; left: 50%; transform: translateX(-50%); font-family: 'El Messiri', serif; font-size: 1.6rem; font-weight: 700; color: var(--primary-green); }
+        #adminAddBtn { background: var(--primary-green); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 24px; display: block; }
+        .feed { margin-top: 90px; padding: 20px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .card-img { width: 100%; height: 200px; object-fit: cover; background: #eee; }
+        .card-body { padding: 15px; text-align: right; }
+        footer { text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #eee; }
+        footer a { text-decoration: none; color: var(--primary-green); margin: 0 10px; font-weight: bold; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: center; }
+        .modal-content { background: white; padding: 25px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center; }
+        input, textarea { width: 100%; margin-bottom: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px; }
+        .btn-save { background: var(--primary-green); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; width: 100%; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="right-section">
-            <button id="adminAddBtn" onclick="openPostModal()">+</button>
-        </div>
-        <div class="brand"><span>Ghardaia</span> <span style="color: var(--accent-gold);">Production</span></div>
-        <div class="left-section" style="margin-right: auto;">
-            <div id="profileBtn" style="cursor:pointer;" onclick="handleProfileClick()">👤</div>
-        </div>
+        <button id="adminAddBtn" onclick="openPostModal()">+</button>
+        <div class="brand">Ghardaia <span style="color: var(--accent-gold);">Production</span></div>
     </header>
 
     <div class="feed">
         <div class="grid" id="newsGrid">
-            </div>
+            <p style="text-align: center; grid-column: 1/-1;">جاري تحميل الفقاسات...</p>
+        </div>
     </div>
 
-    <footer>
-        <p>
-            <a href="about.html">من نحن</a> | 
-            <a href="privacy.html">سياسة الخصوصية</a>
-        </p>
-        <p style="font-size: 14px; color: #777; margin-top: 10px;">© 2026 فقاسات غرداية للمنتوجات الفلاحية. جميع الحقوق محفوظة.</p>
-    </footer>
-
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-
-    <script>
-        // إعدادات Firebase الخاصة بك
-        const firebaseConfig = {
-            apiKey: "AIzaSyAqFP7Gk_CEKXNqT7FzyIMAerf3nZxCOq4",
-            authDomain: "xbsjhs-94e7e.firebaseapp.com",
-            projectId: "xbsjhs-94e7e",
-            storageBucket: "xbsjhs-94e7e.firebasestorage.app",
-            messagingSenderId: "1059037948360",
-            appId: "1:1059037948360:web:02c16b41755bf65b72b8fd"
-        };
-        
-        firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-
-        // وظيفة بسيطة لعرض المنشورات (كمثال)
-        async function loadPosts() {
-            const grid = document.getElementById('newsGrid');
-            const snapshot = await db.collection('posts').orderBy('created_at', 'desc').get();
-            if(snapshot.empty) {
-                grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">لا توجد منشورات حالياً. ابدأ بإضافة أول فقاسة!</p>';
-                return;
-            }
-            // كود عرض البطاقات يوضع هنا
-        }
-        loadPosts();
-    </script>
-</body>
-</html>
+    <div id="postModal" class="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom:15px;">إضافة فقاسة جديدة</h2>
