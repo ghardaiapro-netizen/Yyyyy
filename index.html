@@ -3,43 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ghardaia Production | إنتاج غرداية</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
-    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <title>Ghardaia Production</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root { --primary-green: #2e7d32; --accent-gold: #c5a059; --text-dark: #1a3c1e; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Noto Sans Arabic', sans-serif; background: #f9fafb; color: var(--text-dark); }
-        header { height: 70px; background: white; display: flex; align-items: center; padding: 0 20px; position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .brand { position: absolute; left: 50%; transform: translateX(-50%); font-family: 'El Messiri', serif; font-size: 1.6rem; font-weight: 700; color: var(--primary-green); }
-        #adminAddBtn { background: var(--primary-green); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 24px; display: block; }
-        .feed { margin-top: 90px; padding: 20px; max-width: 1200px; margin-left: auto; margin-right: auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border: 1px solid #eee; }
-        .card-img { width: 100%; height: 200px; object-fit: cover; background: #eee; }
-        .card-body { padding: 15px; text-align: right; }
-        footer { text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #eee; }
-        footer a { text-decoration: none; color: var(--primary-green); margin: 0 10px; font-weight: bold; }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: center; }
-        .modal-content { background: white; padding: 25px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center; }
-        input, textarea { width: 100%; margin-bottom: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px; }
-        .btn-save { background: var(--primary-green); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; width: 100%; }
-    </style>
-</head>
-<body>
-
-    <header>
-        <button id="adminAddBtn" onclick="openPostModal()">+</button>
-        <div class="brand">Ghardaia <span style="color: var(--accent-gold);">Production</span></div>
-    </header>
-
-    <div class="feed">
-        <div class="grid" id="newsGrid">
-            <p style="text-align: center; grid-column: 1/-1;">جاري تحميل الفقاسات...</p>
-        </div>
-    </div>
-
-    <div id="postModal" class="modal">
-        <div class="modal-content">
-            <h2 style="margin-bottom:15px;">إضافة فقاسة جديدة</h2>
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        
+        :root {
+            --primary-green: #2e7d32;
+            --dark-green: #1b5e20;
+            --light-green: #4caf50;
+            --accent-gold: #c5a059;
+            --dark-gold: #a88645;
+            --bg-light: #f9fafb;
+            --bg-gradient: linear-gradient(135deg, #f9fafb 0%, #e8f5e9 100%);
+            --card-gradient: linear-gradient(180deg, #ffffff 0%, #f8fdf8 100%);
+            --danger-red: #d32f2f;
+            --text-dark: #1a3c1e;
+            --text-light: #5a6c5d;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --border-radius-sm: 8px;
+            --
