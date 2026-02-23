@@ -3,78 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إنتاج غرداية | للفقاسات والتوعية الفلاحية</title>
+    <title>إنتاج غرداية | صناعة الفقاسات</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;700&family=Noto+Sans+Arabic:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&family=Vazirmatn:wght@300;500&display=swap" rel="stylesheet">
     
     <style>
         :root { 
             --primary-green: #2e7d32; 
-            --accent-gold: #fbc02d;
-            --text-dark: #1a3c1e; 
+            --dark-green: #1b5e20;
             --white: #ffffff; 
         }
+        
         * { box-sizing: border-box; margin: 0; padding: 0; }
         
+        /* تغيير الخط العام للموقع */
         body { 
-            font-family: 'Noto Sans Arabic', sans-serif; 
-            background: #f9fafb; 
-            color: var(--text-dark); 
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            font-family: 'Vazirmatn', sans-serif; 
+            background: #fdfdfd; 
+            color: #333; 
+            line-height: 1.7;
         }
-        
-        /* الهيدر مع اللوقو */
+
+        /* تنسيق الهيدر المطور */
         header { 
-            height: 85px; background: var(--white); display: flex; 
-            align-items: center; justify-content: space-between; 
-            padding: 0 5%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: var(--white); 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 10px 4%; 
+            position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
         }
         
         .brand { display: flex; align-items: center; text-decoration: none; }
-        .brand img { height: 55px; width: auto; margin-left: 12px; }
-        .brand span { font-family: 'El Messiri'; font-size: 1.5rem; font-weight: 700; color: var(--primary-green); }
+        .brand img { height: 60px; width: auto; margin-left: 12px; }
+        .brand span { 
+            font-family: 'Cairo', sans-serif; 
+            font-size: 1.4rem; 
+            font-weight: 800; 
+            color: var(--primary-green);
+        }
         
-        nav a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 1rem; margin-right: 20px; transition: 0.3s; }
+        nav { display: flex; gap: 15px; }
+        nav a { 
+            text-decoration: none; 
+            color: #555; 
+            font-weight: 500; 
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
         nav a:hover { color: var(--primary-green); }
         
-        /* القسم الرئيسي */
+        /* قسم الترحيب */
         .hero { 
-            background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(46, 125, 50, 0.8)), url('https://images.unsplash.com/photo-1582722872445-41fe501ea146?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover; background-position: center;
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
             color: white; padding: 60px 20px; text-align: center;
         }
-        .hero h1 { font-family: 'El Messiri'; font-size: 2.5rem; margin-bottom: 15px; }
-        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9; }
+        .hero h1 { 
+            font-family: 'Cairo', sans-serif; 
+            font-size: 2.4rem; 
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+        .hero p { font-weight: 300; opacity: 0.9; font-size: 1.1rem; }
 
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; flex: 1; }
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
         
-        /* الشبكة البرمجية للمقالات والمنتجات */
-        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; margin-top: 30px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 25px; }
         
-        .card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: 0.3s; border-top: 5px solid var(--primary-green); }
-        .card:hover { transform: translateY(-8px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .card-content { padding: 25px; text-align: right; }
-        .card-content h3 { color: var(--primary-green); margin-bottom: 12px; font-family: 'El Messiri'; font-size: 1.4rem; }
-        .card-content p { color: #555; font-size: 0.95rem; margin-bottom: 20px; }
+        .card { 
+            background: var(--white); 
+            border-radius: 20px; 
+            padding: 30px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: right;
+            transition: 0.3s;
+            border: 1px solid #eee;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary-green); }
         
-        .btn { display: inline-block; padding: 12px 25px; background: var(--primary-green); color: white; border-radius: 12px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .btn:hover { background: #1b5e20; transform: scale(1.05); }
+        .card h3 { 
+            color: var(--primary-green); 
+            margin-bottom: 15px; 
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.5rem;
+        }
+        
+        .btn { 
+            display: inline-block; 
+            padding: 12px 28px; 
+            background: var(--primary-green); 
+            color: white; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
+        }
 
-        /* تذييل الصفحة */
-        footer { background: #1a3c1e; color: white; padding: 30px; text-align: center; margin-top: 50px; }
-        footer p { font-size: 0.9rem; opacity: 0.8; }
+        footer { 
+            background: #111; 
+            color: #888; 
+            padding: 30px; 
+            text-align: center; 
+            font-size: 0.85rem;
+            margin-top: 50px;
+        }
     </style>
 </head>
 <body>
 
     <header>
         <a href="index.html" class="brand">
-            <img src="logo.png" alt="لوقو إنتاج غرداية">
+            <img src="logo.png" alt="شعار إنتاج غرداية">
             <span>إنتاج غرداية</span>
         </a>
         <nav>
@@ -84,40 +125,27 @@
     </header>
 
     <section class="hero">
-        <h1>ريادة في صناعة الفقاسات</h1>
-        <p>نجمع بين التكنولوجيا الحديثة والخبرة الفلاحية لضمان أفضل نتائج التفقيس وتوعية المربين.</p>
+        <h1>صناعة الفقاسات الذكية</h1>
+        <p>نبتكر حلولاً تقنية لرفع كفاءة الإنتاج الفلاحي</p>
     </section>
 
     <div class="container">
         <div class="grid">
             <div class="card">
-                <div class="card-content">
-                    <h3>صناعة الفقاسات</h3>
-                    <p>نقدم تشكيلة من الفقاسات الأوتوماتيكية ذات الجودة العالية، المصممة لتناسب احتياجات المربين المحترفين والمبتدئين.</p>
-                    <a href="#" class="btn">اكتشف منتجاتنا</a>
-                </div>
+                <h3>أحدث الفقاسات</h3>
+                <p>اكتشف الجيل الجديد من الفقاسات الأوتوماتيكية بالكامل مع ضمان الجودة والأداء.</p>
+                <a href="#" class="btn">طلب عرض سعر</a>
             </div>
-
             <div class="card">
-                <div class="card-content">
-                    <h3>التوعية والإرشاد</h3>
-                    <p>دروس ومقالات تعليمية حول طرق التفقيس الصحيحة، إدارة المزارع، وكيفية التعامل مع بيض التفقيس.</p>
-                    <a href="#" class="btn">ابدأ التعلم</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-content">
-                    <h3>آخر الأخبار الفلاحية</h3>
-                    <p>تابع مستجدات القطاع الفلاحي في المنطقة وأحدث التقنيات المستخدمة في عالم تربية الدواجن.</p>
-                    <a href="#" class="btn">اقرأ المزيد</a>
-                </div>
+                <h3>التوعية الفلاحية</h3>
+                <p>مقالات حصرية وإرشادات لمربي الدواجن لتحسين نسب التفقيس والرعاية.</p>
+                <a href="#" class="btn">تصفح المقالات</a>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>© 2026 Ghardaia Production. جميع الحقوق محفوظة لإنتاج الفقاسات والتوعية الفلاحية.</p>
+        <p>© 2026 إنتاج غرداية - كافة الحقوق محفوظة.</p>
     </footer>
 
 </body>
