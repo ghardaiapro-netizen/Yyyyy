@@ -3,97 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>غرداية للمنتوجات الفلاحية | فقاسات غرداية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>فقاسة غرداية - أخبار وتوعية فلاحية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --main-green: #2e7d32; --bg-gray: #f8f9fa; }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Cairo', sans-serif; background: var(--bg-gray); color: #333; line-height: 1.6; }
-
-        header { background: white; padding: 20px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .brand-name { color: var(--main-green); font-size: 1.8rem; font-weight: 900; }
-        .sub-brand { color: #666; font-size: 1.1rem; font-weight: bold; }
-
-        .ad-banner { max-width: 1000px; margin: 15px auto; background: white; border: 1px dashed #ccc; height: 90px; display: flex; align-items: center; justify-content: center; color: #999; border-radius: 8px; }
-
-        .container { max-width: 1100px; margin: auto; padding: 15px; }
-        
-        /* الأقسام (الأبواب) */
-        .section-box { background: white; border-radius: 15px; padding: 20px; margin-bottom: 30px; shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        .section-header { border-right: 5px solid var(--main-green); padding-right: 15px; margin-bottom: 20px; font-weight: 900; color: var(--main-green); }
-
-        /* تنسيق الأخبار */
-        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-        .news-item { background: #fff9f0; padding: 15px; border-radius: 10px; border: 1px solid #ffe0b2; }
-
-        /* تنسيق الفقاسات */
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .card { background: white; border: 1px solid #eee; border-radius: 15px; padding: 15px; text-align: center; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; background: #eee; }
-        
-        .price { font-size: 1.4rem; font-weight: 800; color: #d32f2f; margin: 10px 0; }
-        .btn-wa { display: block; background: #25d366; color: white; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: bold; }
-
-        footer { background: #1a1a1a; color: white; text-align: center; padding: 30px; margin-top: 40px; }
+        :root {
+            --primary-color: #2e7d32; /* أخضر فلاحي */
+            --secondary-color: #f5f5f5;
+            --accent-color: #ff9800; /* للأسعار والتنبيهات */
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #fcfcfc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        /* قسم التوعية */
+        .awareness-section {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-right: 6px solid var(--accent-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .awareness-section h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        .guidance-msg {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #d32f2f;
+            margin: 15px 0;
+        }
+        /* قسم المنتجات */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        .product-card:hover { transform: translateY(-5px); }
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+        .product-info { padding: 20px; }
+        .product-name { font-size: 1.4em; font-weight: bold; color: var(--primary-color); }
+        .product-capacity { color: #666; margin: 10px 0; }
+        .product-price {
+            font-size: 1.5em;
+            color: #d32f2f;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="brand-name">غرداية للمنتوجات الفلاحية</div>
-        <div class="sub-brand">فقاسات غرداية الذكية</div>
-    </header>
+<header>
+    <h1>فقاسة غرداية للمنتوجات الفلاحية</h1>
+</header>
 
-    <div class="container">
-        <div class="ad-banner">مساحة إعلانية (Banner Ads)</div>
+<div class="container">
+    <section class="awareness-section">
+        <h2>أخبار وتوعية فلاحية - الجزائر</h2>
+        <p class="guidance-msg">"اختر أفضل استثمار لضمان نجاح مشروعك الفلاحي"</p>
+        <p>نرافقكم بتقديم آخر مستجدات قطاع الفلاحة، ونصائح تقنية للمربين، مع متابعة دقيقة لأسعار السوق الوطنية لدعم الفلاح في كل ربوع الوطن.</p>
+    </section>
 
-        <section class="section-box">
-            <h2 class="section-header">الأخبار ومواضيع الفلاحين</h2>
-            <div class="news-grid">
-                <article class="news-item">
-                    <h3>نصائح للمربين في فصل الشتاء</h3>
-                    <p>كيفية الحفاظ على استقرار درجة الحرارة لضمان تفقيس ناجح بنسبة 95%...</p>
-                </article>
-                <article class="news-item">
-                    <h3>سوق الفلاحة اليوم</h3>
-                    <p>متابعة لآخر أسعار الدواجن والبيض والمنتجات الفلاحية في منطقة غرداية والجنوب.</p>
-                </article>
+    <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 25px;">إصدارات فقاسة غرداية المتوفرة</h2>
+    
+    <div class="products-grid">
+        <div class="product-card">
+            <img src="your-image-link.jpg" alt="فقاسة غرداية 511 بيضة" class="product-img">
+            <div class="product-info">
+                <div class="product-name">فقاسة غرداية</div>
+                <div class="product-capacity">سعة 511 بيضة</div>
+                <div class="product-price">75,000 دج</div>
+                <a href="https://wa.me/رقمك_هنا" class="whatsapp-btn">طلب عبر واتساب</a>
             </div>
-        </section>
+        </div>
 
-        <section class="section-box">
-            <h2 class="section-header">عرض فقاسات غرداية</h2>
-            <div class="product-grid">
-                
-                <div class="card">
-                    <img src="1000528803.jpg" alt="فقاسة غرداية">
-                    <h3>فقاسة احترافية 511 بيضة</h3>
-                    <div class="price">72,000 دج</div>
-                    <a href="https://wa.me/213784117757" class="btn-wa">طلب عبر واتساب</a>
-                </div>
-
-                <div class="card">
-                    <img src="1000528798.jpg" alt="فقاسة غرداية">
-                    <h3>فقاسة ذكية موديل 2026</h3>
-                    <div class="price">62,000 دج</div>
-                    <a href="https://wa.me/213784117757" class="btn-wa">طلب عبر واتساب</a>
-                </div>
-
-                <div class="card">
-                    <img src="1000528799.jpg" alt="فقاسة كبيرة">
-                    <h3>فقاسة سعة كبيرة للمشاريع</h3>
-                    <div class="price">اتصل للسعر</div>
-                    <a href="https://wa.me/213784117757" class="btn-wa">طلب عبر واتساب</a>
-                </div>
-
+        <div class="product-card">
+            <div class="product-info">
+                <div class="product-name">فقاسة غرداية</div>
+                <div class="product-capacity">سعة 219 بيضة</div>
+                <div class="product-price">62,000 دج</div>
+                <a href="https://wa.me/رقمك_هنا" class="whatsapp-btn">طلب عبر واتساب</a>
             </div>
-        </section>
+        </div>
+
+        <div class="product-card">
+            <div class="product-info">
+                <div class="product-name">فقاسة غرداية</div>
+                <div class="product-capacity">سعة 117 بيضة</div>
+                <div class="product-price">50,000 دج</div>
+                <a href="https://wa.me/رقمك_هنا" class="whatsapp-btn">طلب عبر واتساب</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-info">
+                <div class="product-name">فقاسة غرداية</div>
+                <div class="product-capacity">سعة 78 بيضة</div>
+                <div class="product-price">38,000 دج</div>
+                <a href="https://wa.me/رقمك_هنا" class="whatsapp-btn">طلب عبر واتساب</a>
+            </div>
+        </div>
     </div>
-
-    <footer>
-        <p>© 2026 غرداية للمنتوجات الفلاحية - جميع الحقوق محفوظة</p>
-    </footer>
+</div>
 
 </body>
 </html>
