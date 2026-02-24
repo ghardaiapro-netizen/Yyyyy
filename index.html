@@ -3,54 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>علامة غرداية للمنتجات الفلاحية | فقاسات ذكية وأخبار المربي</title>
+    <title>علامة غرداية للمنتجات الفلاحية</title>
     
-    <meta name="description" content="منصة علامة غرداية الرائدة في صناعة الفقاسات الذكية، تقديم إرشادات فلاحية، وآخر أخبار المربين في الجزائر.">
-    <meta name="keywords" content="فقاسات غرداية، منتجات فلاحية، تربية الدواجن، أخبار الفلاحة، الجزائر">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     
     <style>
-        :root { --primary: #2e7d32; --secondary: #1b5e20; --accent: #f57c00; --text: #333; --light: #f9f9f9; }
+        :root { --primary: #2e7d32; --accent: #f57c00; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Cairo', sans-serif; background: #eceff1; color: var(--text); line-height: 1.6; }
+        body { font-family: 'Cairo', sans-serif; background: #f4f7f6; color: #333; line-height: 1.6; text-align: right; }
 
-        /* الهيدر */
-        header { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); sticky; top: 0; z-index: 1000; }
-        .logo-area { display: flex; align-items: center; text-decoration: none; }
-        .logo-area img { height: 70px; border-radius: 12px; margin-left: 15px; }
-        .logo-text h1 { font-size: 1.5rem; color: var(--primary); font-weight: 900; }
-        .logo-text p { font-size: 0.8rem; color: #777; }
+        header { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo-text h1 { font-size: 1.5rem; color: var(--primary); }
 
-        /* مساحات أدسنس (AdSense Ready) */
-        .adsense-top { max-width: 1200px; margin: 20px auto; background: #fff; height: 90px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 8px; font-size: 0.8rem; color: #bbb; text-transform: uppercase; }
+        .container { max-width: 1100px; margin: 20px auto; padding: 0 15px; display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
 
-        .container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: 2.5fr 1fr; gap: 25px; padding: 0 15px; }
+        .section-title { background: var(--primary); color: white; padding: 10px 20px; border-radius: 5px; margin-bottom: 20px; display: inline-block; }
 
-        /* قسم الفقاسات (المتجر) */
-        .section-title { background: var(--primary); color: white; padding: 8px 20px; border-radius: 5px; margin-bottom: 20px; font-size: 1.2rem; display: inline-block; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin-bottom: 40px; }
-        .product-card { background: white; border-radius: 15px; padding: 15px; text-align: center; border-bottom: 4px solid var(--primary); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .product-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; }
-        .product-card h3 { font-size: 1.1rem; margin: 10px 0; }
-        .price { color: #d32f2f; font-weight: 800; font-size: 1.2rem; margin-bottom: 10px; }
-        .buy-btn { background: #25d366; color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; display: block; font-weight: bold; font-size: 0.9rem; }
+        /* البطاقات */
+        .card { background: white; border-radius: 12px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .card img { width: 100%; height: auto; border-radius: 8px; background: #eee; min-height: 150px; }
+        
+        .grid-products { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        
+        .price { color: #d32f2f; font-weight: bold; font-size: 1.2rem; margin: 10px 0; }
+        .btn { background: #25d366; color: white; text-decoration: none; padding: 10px; border-radius: 5px; display: block; text-align: center; font-weight: bold; }
 
-        /* قسم التوعية والأخبار */
-        .articles-list { display: flex; flex-direction: column; gap: 20px; }
-        .article-item { background: white; border-radius: 12px; display: flex; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .article-item img { width: 200px; height: 150px; object-fit: cover; }
-        .article-content { padding: 15px; flex: 1; }
-        .article-content span { font-size: 0.75rem; color: var(--accent); font-weight: bold; }
-        .article-content h3 { font-size: 1.1rem; margin: 5px 0; color: var(--secondary); }
-        .article-content p { font-size: 0.9rem; color: #666; }
-
-        /* السايد بار */
-        .sidebar-item { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .adsense-side { height: 400px; background: #fdfdfd; border: 1px dashed #ccc; display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 0.8rem; text-align: center; }
-
-        footer { background: #1a1a1a; color: white; text-align: center; padding: 40px; margin-top: 50px; border-top: 5px solid var(--primary); }
+        /* أدسنس */
+        .ad-placeholder { background: #fff; border: 1px dashed #ccc; height: 90px; display: flex; align-items: center; justify-content: center; margin: 20px 0; color: #999; }
 
         @media (max-width: 768px) {
             .container { grid-template-columns: 1fr; }
-            .article-
+            .grid-products { grid-template-columns: 1fr; }
+        }
+
+        footer { background: #222; color: white; text-align: center; padding: 30px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">
+            <h1>علامة غرداية</h1>
+            <p>للمنتجات الفلاحية</p>
+        </div>
+    </header>
+
+    <div class="ad-placeholder">مساحة إعلانية (Banner)</div>
+
+    <div class="container">
+        
+        <main>
+            <h2 class="section-title">قسم الفقاسات</h2>
+            <div class="grid-products">
+                <div class="card">
+                    <img src="1000527437.jpg" alt="فقاسة 511 بيضة">
+                    <h3>فقاسة 511 بيضة</h3>
+                    <div class="price">72,000 دج</div>
+                    <a href="https://wa.me/213784117757" class="btn">طلب عبر واتساب</a>
+                </div>
+                <div class="card">
+                    <img src="1000527435.jpg" alt="فقاسة 219 بيضة">
+                    <h3>فقاسة 219 بيضة</h3>
+                    <div class="price">62,000 دج</div>
+                    <a href="https://wa.me/213784117757" class="btn">طلب عبر واتساب</a>
+                </div>
+            </div>
+
+            <h2 class="section-title">أخبار وتوعية فلاحية</h2>
+            <div class="card">
+                <h3>كيفية العناية بالفقاسة في الشتاء</h3>
+                <p>نصائح تقنية لضمان ثبات درجة الحرارة داخل الفقاسة خلال الليالي الباردة...</p>
+            </div>
+        </main>
+
+        <aside>
+            <div class="card">
+                <h3>تواصل معنا</h3>
+                <p>الهاتف: 0784117757</p>
+                <a href="https://wa.me/213784117757" class="btn" style="background: var(--primary);">استشارة مجانية</a>
+            </div>
+            <div class="ad-placeholder" style="height: 300px;">إعلان جانبي</div>
+        </aside>
+
+    </div>
+
+    <footer>
+        <p>© 2026 علامة غرداية للمنتجات الفلاحية</p>
+    </footer>
+
+</body>
+</html>
