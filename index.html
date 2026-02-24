@@ -3,116 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إنتاج غرداية | أخبار الفلاحة والفقاسات الذكية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>علامة غرداية للمنتجات الفلاحية | فقاسات ذكية وأخبار المربي</title>
+    
+    <meta name="description" content="منصة علامة غرداية الرائدة في صناعة الفقاسات الذكية، تقديم إرشادات فلاحية، وآخر أخبار المربين في الجزائر.">
+    <meta name="keywords" content="فقاسات غرداية، منتجات فلاحية، تربية الدواجن، أخبار الفلاحة، الجزائر">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
     <style>
-        :root { --main-green: #2e7d32; --accent-orange: #f57c00; --bg: #f0f2f5; }
+        :root { --primary: #2e7d32; --secondary: #1b5e20; --accent: #f57c00; --text: #333; --light: #f9f9f9; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Cairo', sans-serif; background: var(--bg); color: #333; }
-        
-        /* الهيدر واللوجو */
-        header { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .logo { display: flex; align-items: center; text-decoration: none; }
-        .logo img { height: 60px; border-radius: 8px; margin-left: 15px; }
-        .logo-text h1 { font-size: 1.2rem; color: var(--main-green); font-weight: 900; line-height: 1; }
-        .logo-text span { font-size: 0.8rem; color: #666; }
+        body { font-family: 'Cairo', sans-serif; background: #eceff1; color: var(--text); line-height: 1.6; }
 
-        /* مساحة إعلانية علوية */
-        .ad-top { max-width: 1100px; margin: 20px auto; background: #ddd; height: 90px; display: flex; align-items: center; justify-content: center; border: 1px dashed #999; border-radius: 8px; font-size: 0.9rem; color: #777; }
+        /* الهيدر */
+        header { background: white; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); sticky; top: 0; z-index: 1000; }
+        .logo-area { display: flex; align-items: center; text-decoration: none; }
+        .logo-area img { height: 70px; border-radius: 12px; margin-left: 15px; }
+        .logo-text h1 { font-size: 1.5rem; color: var(--primary); font-weight: 900; }
+        .logo-text p { font-size: 0.8rem; color: #777; }
 
-        .container { max-width: 1200px; margin: 20px auto; display: grid; grid-template-columns: 3fr 1fr; gap: 20px; padding: 0 20px; }
+        /* مساحات أدسنس (AdSense Ready) */
+        .adsense-top { max-width: 1200px; margin: 20px auto; background: #fff; height: 90px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 8px; font-size: 0.8rem; color: #bbb; text-transform: uppercase; }
 
-        /* قسم الأخبار */
-        .news-section h2 { margin-bottom: 20px; border-right: 5px solid var(--main-green); padding-right: 15px; }
-        .news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .news-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: 0.3s; }
-        .news-card:hover { transform: translateY(-5px); }
-        .news-card img { width: 100%; height: 180px; object-fit: cover; }
-        .news-content { padding: 15px; }
-        .news-content span { color: var(--accent-orange); font-size: 0.8rem; font-weight: bold; }
-        .news-content h3 { font-size: 1.1rem; margin: 10px 0; }
-        .news-content p { font-size: 0.9rem; color: #666; }
+        .container { max-width: 1200px; margin: auto; display: grid; grid-template-columns: 2.5fr 1fr; gap: 25px; padding: 0 15px; }
 
-        /* السايد بار (الإعلانات والمعلومات) */
-        .sidebar { display: flex; flex-direction: column; gap: 20px; }
-        .ad-sidebar { background: #eee; height: 400px; display: flex; align-items: center; justify-content: center; border-radius: 12px; border: 1px dashed #bbb; font-size: 0.8rem; text-align: center; padding: 10px; }
-        .social-box { background: white; padding: 20px; border-radius: 12px; text-align: center; }
+        /* قسم الفقاسات (المتجر) */
+        .section-title { background: var(--primary); color: white; padding: 8px 20px; border-radius: 5px; margin-bottom: 20px; font-size: 1.2rem; display: inline-block; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; margin-bottom: 40px; }
+        .product-card { background: white; border-radius: 15px; padding: 15px; text-align: center; border-bottom: 4px solid var(--primary); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .product-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; }
+        .product-card h3 { font-size: 1.1rem; margin: 10px 0; }
+        .price { color: #d32f2f; font-weight: 800; font-size: 1.2rem; margin-bottom: 10px; }
+        .buy-btn { background: #25d366; color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; display: block; font-weight: bold; font-size: 0.9rem; }
 
-        /* الجوال */
+        /* قسم التوعية والأخبار */
+        .articles-list { display: flex; flex-direction: column; gap: 20px; }
+        .article-item { background: white; border-radius: 12px; display: flex; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .article-item img { width: 200px; height: 150px; object-fit: cover; }
+        .article-content { padding: 15px; flex: 1; }
+        .article-content span { font-size: 0.75rem; color: var(--accent); font-weight: bold; }
+        .article-content h3 { font-size: 1.1rem; margin: 5px 0; color: var(--secondary); }
+        .article-content p { font-size: 0.9rem; color: #666; }
+
+        /* السايد بار */
+        .sidebar-item { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .adsense-side { height: 400px; background: #fdfdfd; border: 1px dashed #ccc; display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 0.8rem; text-align: center; }
+
+        footer { background: #1a1a1a; color: white; text-align: center; padding: 40px; margin-top: 50px; border-top: 5px solid var(--primary); }
+
         @media (max-width: 768px) {
             .container { grid-template-columns: 1fr; }
-            header { flex-direction: column; text-align: center; }
-            .logo img { margin-left: 0; margin-bottom: 10px; }
-        }
-
-        footer { background: #1a1a1a; color: white; text-align: center; padding: 30px; margin-top: 50px; }
-    </style>
-</head>
-<body>
-
-    <header>
-        <a href="#" class="logo">
-            <img src="InCollage_20260222_081550086.jpg" alt="لوجو إنتاج غرداية">
-            <div class="logo-text">
-                <h1>إنتاج غرداية</h1>
-                <span>الفقاسات الذكية & أخبار الفلاحة</span>
-            </div>
-        </a>
-        <nav>
-            </nav>
-    </header>
-
-    <div class="ad-top">مساحة إعلانية (728 × 90)</div>
-
-    <div class="container">
-        <main class="news-section">
-            <h2>آخر الأخبار الفلاحية</h2>
-            <div class="news-grid">
-                
-                <article class="news-card">
-                    <img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&q=80&w=500" alt="خبر 1">
-                    <div class="news-content">
-                        <span>تقنيات حديثة</span>
-                        <h3>كيفية زيادة نسبة التفقيس في الفقاسات الذكية</h3>
-                        <p>نصائح الخبراء حول ضبط الرطوبة والحرارة لضمان نتائج مثالية في فصل الشتاء...</p>
-                    </div>
-                </article>
-
-                <article class="news-card">
-                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=500" alt="خبر 2">
-                    <div class="news-content">
-                        <span>أخبار الفلاحة</span>
-                        <h3>مستقبل الزراعة والتربية في منطقة غرداية</h3>
-                        <p>تقرير حول تطور المشاريع الفلاحية في الجنوب الجزائري ودور التكنولوجيا في دعمها...</p>
-                    </div>
-                </article>
-
-                <article class="news-card">
-                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=500" alt="خبر 3">
-                    <div class="news-content">
-                        <span>إرشادات</span>
-                        <h3>أمراض الدواجن الموسمية وطرق الوقاية منها</h3>
-                        <p>دليل شامل للمربين حول كيفية حماية القطيع وضمان استمرارية الإنتاج...</p>
-                    </div>
-                </article>
-
-            </div>
-        </main>
-
-        <aside class="sidebar">
-            <div class="social-box">
-                <h4>تواصل معنا</h4>
-                <p>لأي استفسار تقني حول الفقاسات</p>
-                <a href="https://wa.me/213784117757" style="color: var(--main-green); font-weight: bold; text-decoration: none; display: block; margin-top: 10px;">واتساب: 0784117757</a>
-            </div>
-
-            <div class="ad-sidebar">إعلان جانبي (300 × 400)</div>
-        </aside>
-    </div>
-
-    <footer>
-        <p>© 2026 إنتاج غرداية - منصة الفقاسات والأخبار الفلاحية</p>
-    </footer>
-
-</body>
-</html>
+            .article-
