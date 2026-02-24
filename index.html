@@ -7,49 +7,67 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2e7d32; /* أخضر فلاحي */
-            --secondary-color: #f5f5f5;
-            --accent-color: #ff9800; /* للأسعار والتنبيهات */
+            --primary-green: #2e7d32; /* اللون الأخضر في الصورة */
+            --accent-red: #d32f2f;
+            --bg-light: #f4f7f6;
         }
         body {
             font-family: 'Cairo', sans-serif;
-            background-color: #fcfcfc;
-            margin: 0;
-            padding: 0;
-            color: #333;
+            background-color: var(--bg-light);
+            margin: 0; padding: 0;
+            line-height: 1.6;
         }
+
+        /* الهيدر مع اللوقو الخاص بك */
         header {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: var(--primary-green);
             padding: 20px;
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
+        .logo-box img {
+            max-height: 90px;
+            margin-bottom: 10px;
         }
-        /* قسم التوعية */
-        .awareness-section {
+
+        .container { max-width: 900px; margin: auto; padding: 15px; }
+
+        /* مساحة إعلانية لأدسنس (شرط القبول) */
+        .ad-space {
+            background: #ebebeb;
+            margin: 15px 0;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #999;
+            border: 1px dashed #ccc;
+        }
+
+        /* قسم التوعية الوطني */
+        .awareness-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 15px;
             padding: 25px;
             margin-bottom: 30px;
-            border-right: 6px solid var(--accent-color);
+            border-right: 8px solid #ffa000;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
-        .awareness-section h2 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-        .guidance-msg {
+        .awareness-card h2 { color: var(--primary-green); margin-top: 0; }
+        .guidance-text {
+            color: var(--accent-red);
             font-weight: bold;
-            font-size: 1.2em;
-            color: #d32f2f;
+            font-size: 1.3em;
             margin: 15px 0;
         }
-        /* قسم المنتجات */
+
+        /* قسم عروض المنتجات */
+        .products-title {
+            text-align: center;
+            color: var(--primary-green);
+            font-size: 1.8em;
+            margin-bottom: 25px;
+        }
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -59,93 +77,102 @@
             background: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             text-align: center;
             border: 1px solid #eee;
         }
-        .product-card:hover { transform: translateY(-5px); }
-        .product-img {
+        .product-card img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background-color: #eee;
+            height: 250px;
+            object-fit: cover; /* مثالي لصورة الفقاسة المفتوحة */
         }
-        .product-info { padding: 20px; }
-        .product-name { font-size: 1.4em; font-weight: bold; color: var(--primary-color); }
-        .product-capacity { color: #666; margin: 10px 0; }
-        .product-price {
-            font-size: 1.5em;
-            color: #d32f2f;
-            font-weight: bold;
-            margin: 10px 0;
-        }
+        .product-name { font-size: 1.5em; font-weight: bold; margin: 15px 0 5px; color: #333; }
+        .product-price { color: var(--accent-red); font-size: 1.6em; font-weight: bold; margin-bottom: 15px; }
+        
         .whatsapp-btn {
-            display: inline-block;
+            display: block;
             background-color: #25d366;
             color: white;
-            padding: 12px 25px;
-            border-radius: 50px;
+            padding: 12px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 15px;
+            margin: 0 20px 20px;
+            border-radius: 8px;
+            transition: 0.3s;
         }
+        .whatsapp-btn:hover { background-color: #128c7e; }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+        footer a { color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px; }
     </style>
 </head>
 <body>
 
 <header>
+    <div class="logo-box">
+        <img src="your-logo.png" alt="فقاسة غرداية">
+    </div>
     <h1>فقاسة غرداية للمنتوجات الفلاحية</h1>
 </header>
 
 <div class="container">
-    <section class="awareness-section">
+    
+    <div class="ad-space">مساحة إعلانية (AdSense)</div>
+
+    <section class="awareness-card">
         <h2>أخبار وتوعية فلاحية - الجزائر</h2>
-        <p class="guidance-msg">"اختر أفضل استثمار لضمان نجاح مشروعك الفلاحي"</p>
+        <p class="guidance-text">"اختر أفضل استثمار لضمان نجاح مشروعك الفلاحي"</p>
         <p>نرافقكم بتقديم آخر مستجدات قطاع الفلاحة، ونصائح تقنية للمربين، مع متابعة دقيقة لأسعار السوق الوطنية لدعم الفلاح في كل ربوع الوطن.</p>
     </section>
 
-    <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 25px;">إصدارات فقاسة غرداية المتوفرة</h2>
+    <div class="ad-space">مساحة إعلانية (AdSense)</div>
+
+    <h2 class="products-title">إصدارات فقاسة غرداية المعتمدة</h2>
     
     <div class="products-grid">
         <div class="product-card">
-            <img src="your-image-link.jpg" alt="فقاسة غرداية 511 بيضة" class="product-img">
-            <div class="product-info">
-                <div class="product-name">فقاسة غرداية</div>
-                <div class="product-capacity">سعة 511 بيضة</div>
-                <div class="product-price">75,000 دج</div>
-                <a href="https://wa.me/رقمك_هنا" class="whatsapp-btn">طلب عبر واتساب</a>
-            </div>
+            <img src="1000528799.jpg" alt="فقاسة غرداية 511 بيضة">
+            <div class="product-name">فقاسة غرداية (511 بيضة)</div>
+            <div class="product-price">75,000 دج</div>
+            <a href="https://wa.me/رقمك_هنا" class="whatsapp-btn">طلب عبر واتساب</a>
         </div>
 
         <div class="product-card">
-            <div class="product-info">
-                <div class="product-name">فقاسة غرداية</div>
-                <div class="product-capacity">سعة 219 بيضة</div>
-                <div class="product-price">62,000 دج</div>
-                <a href="https://wa.me/رقمك_هنا" class="whatsapp-btn">طلب عبر واتساب</a>
-            </div>
+            <div style="height:250px; background:#ddd; display:flex; align-items:center; justify-content:center;">صورة 219 بيضة</div>
+            <div class="product-name">فقاسة غرداية (219 بيضة)</div>
+            <div class="product-price">62,000 دج</div>
+            <a href="https://wa.me/رقمك_هنا" class="whatsapp-btn">طلب عبر واتساب</a>
         </div>
 
         <div class="product-card">
-            <div class="product-info">
-                <div class="product-name">فقاسة غرداية</div>
-                <div class="product-capacity">سعة 117 بيضة</div>
-                <div class="product-price">50,000 دج</div>
-                <a href="https://wa.me/رقمك_هنا" class="whatsapp-btn">طلب عبر واتساب</a>
-            </div>
+            <div style="height:250px; background:#ddd; display:flex; align-items:center; justify-content:center;">صورة 117 بيضة</div>
+            <div class="product-name">فقاسة غرداية (117 بيضة)</div>
+            <div class="product-price">50,000 دج</div>
+            <a href="https://wa.me/رقمك_هنا" class="whatsapp-btn">طلب عبر واتساب</a>
         </div>
 
         <div class="product-card">
-            <div class="product-info">
-                <div class="product-name">فقاسة غرداية</div>
-                <div class="product-capacity">سعة 78 بيضة</div>
-                <div class="product-price">38,000 دج</div>
-                <a href="https://wa.me/رقمك_هنا" class="whatsapp-btn">طلب عبر واتساب</a>
-            </div>
+            <div style="height:250px; background:#ddd; display:flex; align-items:center; justify-content:center;">صورة 78 بيضة</div>
+            <div class="product-name">فقاسة غرداية (78 بيضة)</div>
+            <div class="product-price">38,000 دج</div>
+            <a href="https://wa.me/رقمك_هنا" class="whatsapp-btn">طلب عبر واتساب</a>
         </div>
     </div>
+
 </div>
+
+<footer>
+    <p>&copy; 2026 فقاسة غرداية - كافة الحقوق محفوظة</p>
+    <a href="#">سياسة الخصوصية</a> | 
+    <a href="#">اتصل بنا</a> | 
+    <a href="#">من نحن</a>
+</footer>
 
 </body>
 </html>
